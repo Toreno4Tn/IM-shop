@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>IM.TN</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo-container">
+  <span class="logo-main">IM</span>
+  <span class="logo-sub">Store</span>
+</div>
+  <ul class="menu">
+    <li id="homme" class="active" onclick="setCategory('homme')">HOMME</li>
+    <li id="femme" onclick="setCategory('femme')">FEMME</li>
+  </ul>
+  <div class="search-box">
+    <i class="fa fa-search"></i>
+    <input type="text" placeholder="RECHERCHER ICI">
+  </div>
+  <div class="nav-item" onclick="toggleCart()" style="cursor:pointer;">
+    <i class="fa-solid fa-bag-shopping"></i>
+    <span>PANIER (<span id="cart-count">0</span>)</span>
+  </div>
+</header>
+
+<section class="products">
+  <div id="products-grid" style="display: contents;">
+  </div>
+</section>
+</section>
+
+<div id="product-modal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close" onclick="closeProduct()">&times;</span>
+    <div class="product-container">
+      <div class="product-image"><img id="modal-img"></div>
+      <div class="product-details">
+        <div class="top">
+          <h2 id="modal-title"></h2>
+          <span class="price" id="modal-price"></span>
+        </div>
+        <div class="info"><h4>DETAILS</h4><p id="modal-details">Description...</p></div>
+        <button class="add-btn" onclick="addToBag()">ADD TO BAG</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="side-cart" class="side-cart hidden">
+    <div class="side-cart-content">
+        <span class="close-side" onclick="toggleSideCart()">&times;</span>
+        <h2 class="added-title">PRODUIT AJOUTÉ</h2>
+        <div id="last-added-item" class="last-item-preview"></div>
+        <div class="side-cart-btns">
+            <button class="btn-black" onclick="toggleSideCart(); toggleCart(); showCheckoutForm();">PASSER COMMANDE</button>
+            <button class="btn-white" onclick="toggleSideCart(); toggleCart();">VOIR PANIER (<span id="side-cart-count">0</span>)</button>
+        </div>
+    </div>
+</div>
+
+<div id="cart-modal" class="modal hidden">
+  <div class="modal-content cart-view">
+    <span class="close" onclick="toggleCart()">&times;</span>
+    <h2 style="text-align: center;">VOTRE PANIER</h2>
+    <div id="cart-items-list"></div>
+    <div id="cart-summary">
+      <hr>
+      <p>Total: <span id="cart-total">0 DT</span></p>
+      <button class="buy-btn" onclick="showCheckoutForm()">COMMANDER</button>
+    </div>
+    <div id="checkout-form" class="hidden">
+      <h3>LIVRAISON</h3>
+      <input type="text" id="cust-name" placeholder="Nom et Prénom">
+      <input type="tel" id="cust-phone" placeholder="Numéro de Téléphone">
+      <textarea id="cust-address" placeholder="Adresse complète"></textarea>
+      <button class="confirm-btn" onclick="confirmOrder()">CONFIRMER</button>
+    </div>
+  </div>
+</div>
+
+<script src="details.js"></script>
+</body>
+</html>

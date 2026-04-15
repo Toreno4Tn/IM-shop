@@ -1,0 +1,373 @@
+/* GENERAL */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  border-bottom: 1px solid #ddd;
+  background: white;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.menu li {
+  cursor: pointer;
+  color: #888;
+  transition: 0.2s;
+}
+
+.menu li.active {
+  color: black;
+  font-weight: bold;
+}
+.menu .active {
+  color: black;
+  font-weight: bold;
+}
+
+/* SEARCH */
+.search-box {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #ccc;
+  padding-left: 20px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  margin-left: 10px;
+}
+
+/* ICONS */
+.icons {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.icons div {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* PRODUCTS GRID */
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  background: #f5f5f5;
+  padding: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.product img {
+  width: 100%;
+}
+
+.product h3 {
+  font-size: 13px;
+  margin: 10px 0 5px;
+}
+
+.product p {
+  font-size: 13px;
+}
+
+/* HOVER */
+.product:hover {
+  transform: scale(1.03);
+}
+
+/* ========================= */
+/* PRODUCT DETAIL */
+/* ========================= */
+
+.product-detail {
+  display: none;
+  padding: 40px;
+}
+
+.detail-container {
+  display: flex;
+  gap: 50px;
+}
+
+/* IMAGE */
+.detail-image img {
+  width: 500px;
+  max-width: 100%;
+}
+
+/* INFO */
+.detail-info {
+  max-width: 400px;
+}
+
+.detail-info h2 {
+  margin-bottom: 10px;
+}
+
+.detail-info p {
+  margin: 10px 0;
+}
+
+/* BUTTON */
+.add-btn {
+  background: black;
+  color: white;
+  padding: 15px;
+  border: none;
+  width: 100%;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background: #333;
+}
+
+/* BACK BUTTON */
+.detail-info button:last-child {
+  padding: 10px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+}
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.product-container {
+    display: flex;
+}
+
+/* IMAGE */
+.product-image {
+    width: 65%;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image img {
+    width: 80%;
+}
+
+/* DETAILS */
+.product-details {
+    width: 35%;
+    padding: 30px;
+    background: #f0f0f0;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.label {
+    margin-top: 20px;
+    font-size: 12px;
+    color: gray;
+}
+
+/* COLORS */
+.colors {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.color-box {
+    width: 50px;
+    height: 50px;
+    background: #ccc;
+    border: 1px solid #999;
+}
+
+.color-box.active {
+    border: 2px solid black;
+}
+
+/* SIZES */
+.sizes {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.sizes span {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.sizes span:hover {
+    border: 1px solid black;
+}
+
+/* BUTTON */
+.add-btn {
+    width: 100%;
+    padding: 15px;
+    background: black;
+    color: #c9a84f;
+    border: none;
+    margin: 20px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* INFO */
+.info h4 {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.size-guide {
+    font-size: 12px;
+    color: gray;
+    cursor: pointer;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  width: 80%;
+  max-width: 900px;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.hidden { display: none !important; }
+
+.cart-view { max-width: 500px; }
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item img { width: 50px; border-radius: 5px; }
+
+#checkout-form input, #checkout-form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.confirm-btn {
+  background: black;
+  color: white;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+}
+.side-cart {
+    position: fixed;
+    right: 0; top: 0;
+    width: 350px; height: 100%;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 30px;
+    transition: 0.3s ease;
+}
+
+.last-item-preview {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.last-item-preview img { width: 120px; object-fit: cover; }
+
+.added-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid black; padding-bottom: 10px; }
+
+.side-cart-btns { display: flex; flex-direction: column; gap: 10px; }
+
+.btn-black { background: black; color: white; padding: 15px; border: none; font-weight: bold; cursor: pointer; }
+.btn-white { background: white; color: black; padding: 15px; border: 1px solid black; font-weight: bold; cursor: pointer; }
+
+.close-side { font-size: 25px; cursor: pointer; float: right; }
+
+.logo-container {
+  display: flex;
+  align-items: baseline; /* bech yjiw 3ala nafs el satr mel louta */
+  gap: 5px;               /* l-espace binat-hom */
+  font-family: sans-serif; /* baddel el font kima t7eb */
+  font-weight: bold;
+}
+
+.logo-main {
+  font-size: 24px;       /* kobr el kelma el kbira */
+  color: #000;
+}
+
+.logo-sub {
+  font-size: 16px;       /* asgher b-chwaya kima t7eb enty */
+  color: #333;           /* tnajem tfa3teh chwaya ken t7eb */
+  text-transform: uppercase;
+}
